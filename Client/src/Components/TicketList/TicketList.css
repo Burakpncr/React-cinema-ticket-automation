@@ -1,6 +1,18 @@
 .TicketList-Container {
-  display: flex;
-  justify-content: center;
   margin: 70px auto;
   width: 50%;
+}
+.TicketList-Container h3 {
+  text-align: center;
+}
+
+.TicketList-Wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.Ticket-Wrapper {
+  display: inline-block;
+  width: 100%;
 }

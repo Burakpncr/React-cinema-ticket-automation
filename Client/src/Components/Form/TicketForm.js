@@ -1,10 +1,13 @@
 import { useState } from 'react'
 import InputMask from "react-input-mask";
+import { useTicket } from '../../Contexts/TicketContext'
 import './TicketForm.css'
 
 function TicketForm(props) {
-  const [form, setForm] = useState({film:"", firstName: "", lastName: "", phone: "",price:"" })
-
+  const {ticketList , setTicketList } = useTicket();
+  const {setopenForm , id} = props;
+  const [form, setForm] = useState({id:id, firstName: "", lastName: "", phone: "",price:"" })
+ 
   const handleOnChange = (e) => {
     if (e.target.name === "phone") {
       const re = /[^0-9\s]|\s+$/gi;
@@ -19,8 +22,10 @@ function TicketForm(props) {
   }
 
   const handleSave = () => {
-    console.log(form)
+    setTicketList([...ticketList,form])
+    setopenForm(false)
   }
+
   return (
     <div className="popup">
       <div className="popup_inner">
@@ -42,7 +47,7 @@ function TicketForm(props) {
           <div className="mb-3 row">
             <label htmlFor="inputPassword" className="col-sm-2 col-form-label">Phone</label>
             <div className="col-sm-10">
-              <InputMask mask="+90 (999) 999-99-99" className="form-control" />
+              <InputMask mask="+90 (999) 999-99-99" className="form-control" name="phone" value={form.phone} onChange={handleOnChange} />
             </div>
           </div>
           <div className="mb-3 row">

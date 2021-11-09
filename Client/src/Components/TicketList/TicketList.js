@@ -1,28 +1,18 @@
 import React from 'react'
+import { useTicket } from '../../Contexts/TicketContext'
+import Ticket from './Ticket'
 import "./TicketList.css"
 
 function TicketList() {
+  const {ticketList} = useTicket();
   return (
     <div className="TicketList-Container">
-      <table className="table">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+       <h3> TİCKET LİST </h3>
+      <div className="TicketList-Wrapper">
+      <Ticket ticketList = {ticketList} />
+      </div>
+      </div>
+              
   )
 }
 

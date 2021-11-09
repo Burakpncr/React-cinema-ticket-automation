@@ -3,11 +3,11 @@ import { createContext , useState , useContext } from 'react'
 const TicketContext = createContext();
 
 export const TicketProvider = ({ children }) => {
-  const [ticketList, setticketList] = useState([]) 
+  const [ticketList, setTicketList] = useState([]) 
 
   const values = {
      ticketList,
-     setticketList
+     setTicketList
    }
 
   return <TicketContext.Provider value = {values}>{children}</TicketContext.Provider>
