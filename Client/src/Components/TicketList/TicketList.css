@@ -1,0 +1,6 @@
+.TicketList-Container {
+  display: flex;
+  justify-content: center;
+  margin: 70px auto;
+  width: 50%;
+}

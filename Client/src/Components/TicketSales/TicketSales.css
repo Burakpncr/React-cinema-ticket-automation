@@ -1,0 +1,12 @@
+.Ticket-Container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+.Ticket-Container > button {
+    display: inline-block;
+}
+.Ticket-Button {
+    display: inline-block;
+    margin-left: 10px;
+}
